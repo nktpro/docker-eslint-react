@@ -9,7 +9,7 @@ dependencies:
 
 test:
   override:
-    - docker run -it --rm -v ${PWD}/test:/opt/app -w /opt/app nktpro/eslint-react .
+    -  docker run --rm -v ${PWD}/test:/opt/app -w /opt/app nktpro/eslint-react . | grep "error  \"foo\" is defined but never used  no-unused-vars"
 
 deployment:
   hub:
